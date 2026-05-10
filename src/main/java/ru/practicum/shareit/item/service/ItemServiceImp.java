@@ -42,7 +42,7 @@ public class ItemServiceImp implements ItemService {
 
         return itemStorage.findAll().stream()
                 .filter(Item::getAvailable)
-                .filter(item ->(item.getName() != null && item.getName().toLowerCase().contains(lowerText)) ||
+                .filter(item -> (item.getName() != null && item.getName().toLowerCase().contains(lowerText)) ||
                         (item.getDescription() != null && item.getDescription().toLowerCase().contains(lowerText))
                 )
                 .collect(Collectors.toList());

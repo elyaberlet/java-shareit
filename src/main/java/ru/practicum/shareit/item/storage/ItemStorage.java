@@ -7,9 +7,14 @@ import java.util.Optional;
 
 public interface ItemStorage {
     Item save(Item item);
+
     Item update(Item item);
+
     Optional<Item> findById(Long id);
+
     List<Item> findAll();
+
     List<Item> findAllByOwnerId(Long ownerId);
+
     void deleteById(Long id);
 }

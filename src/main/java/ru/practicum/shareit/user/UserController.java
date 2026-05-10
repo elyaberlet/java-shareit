@@ -24,9 +24,9 @@ public class UserController {
 
     @PostMapping
     public UserResponseDto create(@Valid @RequestBody UserCreateDto createDto) {
-       User user = userMapper.toEntity(createDto);
-       User savedUser = userService.create(user);
-       return userMapper.toResponseDto(savedUser);
+        User user = userMapper.toEntity(createDto);
+        User savedUser = userService.create(user);
+        return userMapper.toResponseDto(savedUser);
     }
 
     @PatchMapping("{userId}")
