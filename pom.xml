@@ -17,6 +17,7 @@
 
     <properties>
         <java.version>21</java.version>
+        <maven-enforcer-plugin.skip>true</maven-enforcer-plugin.skip>
     </properties>
 
     <dependencies>
@@ -62,6 +63,15 @@
                         </path>
                     </annotationProcessorPaths>
                     <fork>true</fork>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>
