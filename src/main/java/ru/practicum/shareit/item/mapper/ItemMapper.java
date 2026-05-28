@@ -1,4 +1,4 @@
-package ru.practicum.shareit.item;
+package ru.practicum.shareit.item.mapper;
 
 import org.springframework.stereotype.Component;
 import ru.practicum.shareit.item.dto.ItemCreateDto;
@@ -38,7 +38,6 @@ public class ItemMapper {
         item.setAvailable(createDto.getAvailable());
         item.setDescription(createDto.getDescription());
         item.setName(createDto.getName());
-        item.setOwnerId(ownerId);
         return item;
     }
 }
