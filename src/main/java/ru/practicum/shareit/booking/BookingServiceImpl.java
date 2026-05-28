@@ -15,8 +15,6 @@ import ru.practicum.shareit.exception.NotFoundException;
 import ru.practicum.shareit.item.model.Item;
 import ru.practicum.shareit.item.storage.ItemRepository;
 import ru.practicum.shareit.user.User;
-import ru.practicum.shareit.user.UserMapper;
-import ru.practicum.shareit.user.service.UserService;
 
 import org.springframework.data.domain.Pageable;
 import ru.practicum.shareit.user.storage.UserRepository;
