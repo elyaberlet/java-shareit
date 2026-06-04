@@ -18,21 +18,15 @@ public class ErrorHandler {
         return Map.of("error", e.getMessage());
     }
 
-    @ExceptionHandler(EmailAlreadyExistsException.class)
+    @ExceptionHandler({EmailAlreadyExistsException.class, DataIntegrityViolationException.class})
     @ResponseStatus(HttpStatus.CONFLICT)
-    public Map<String, String> handleConflict(EmailAlreadyExistsException e) {
+    public Map<String, String> handleConflict(RuntimeException e) {
         return Map.of("error", e.getMessage());
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ExceptionHandler({MethodArgumentNotValidException.class, ValidationException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String, String> handleValidation(MethodArgumentNotValidException e) {
-        return Map.of("error", e.getMessage());
-    }
-
-    @ExceptionHandler(ValidationException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String, String> handleCustomValidation(ValidationException e) {
+    public Map<String, String> handleBadRequest(Exception e) {
         return Map.of("error", e.getMessage());
     }
 
@@ -40,11 +34,5 @@ public class ErrorHandler {
     @ResponseStatus(HttpStatus.FORBIDDEN)
     public Map<String, String> handleAccessDenied(AccessDeniedException e) {
         return Map.of("error", e.getMessage());
-    }
-
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    @ResponseStatus(HttpStatus.CONFLICT)
-    public Map<String, String> handleConflict(DataIntegrityViolationException e) {
-        return Map.of("error", "Conflict: " + e.getMessage());
     }
 }

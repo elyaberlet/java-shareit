@@ -104,13 +104,9 @@ public class ItemServiceImp implements ItemService {
             return List.of();
         }
 
-        String lowerText = text.toLowerCase();
+        List<Item> items = itemRepository.search(text);
 
-        return itemRepository.findAll().stream()
-                .filter(Item::getAvailable)
-                .filter(item -> (item.getName() != null && item.getName().toLowerCase().contains(lowerText)) ||
-                        (item.getDescription() != null && item.getDescription().toLowerCase().contains(lowerText))
-                )
+        return items.stream()
                 .map(itemMapper::toResponseDto)
                 .collect(Collectors.toList());
     }
