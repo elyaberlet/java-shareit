@@ -35,4 +35,13 @@ public class UserMapper {
             user.setEmail(updateDto.getEmail());
         }
     }
+
+    public User toEntity(UserResponseDto dto) {
+        User user = new User();
+        user.setId(dto.getId());
+        user.setName(dto.getName());
+        user.setEmail(dto.getEmail());
+
+        return user;
+    }
 }
