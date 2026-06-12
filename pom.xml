@@ -107,13 +107,6 @@
                             <phase>compile</phase>
                         </execution>
                     </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.puppycrawl.tools</groupId>
-                            <artifactId>checkstyle</artifactId>
-                            <version>10.27.2</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
 
                 <plugin>
@@ -220,5 +213,4 @@
             </build>
         </profile>
     </profiles>
-
 </project>
