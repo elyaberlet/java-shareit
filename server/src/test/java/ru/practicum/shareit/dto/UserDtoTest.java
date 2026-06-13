@@ -8,7 +8,7 @@ import ru.practicum.shareit.user.dto.UserUpdateDto;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class UserDtoTest {
+class  UserDtoTest {
 
     private final ObjectMapper mapper = new ObjectMapper();
 

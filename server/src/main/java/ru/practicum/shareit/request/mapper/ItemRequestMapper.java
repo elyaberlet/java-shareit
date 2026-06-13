@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-@RequiredArgsConstructor
 public class ItemRequestMapper {
     public ItemRequest toEntity(ItemRequestCreateDto createDto, User requester) {
         ItemRequest request = new ItemRequest();
